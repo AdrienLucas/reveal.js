@@ -1,0 +1,56 @@
+/**
+ * SLU theme for reveal.js.
+ *
+ * Copyright (C) 2011-2012 Hakim El Hattab, http://hakim.se
+ * Copyright (C) 2015 Adrien LUCAS, adrien.lucas@sensiolabs.com
+ */
+
+
+// Default mixins and settings -----------------
+@import "../template/mixins";
+@import "../template/settings";
+// ---------------------------------------------
+
+
+
+// Include theme-specific fonts
+@import url(https://fonts.googleapis.com/css?family=Quicksand:400,700,400italic,700italic);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,400,700);
+
+
+// Override theme settings (see ../template/settings.scss)
+$mainFont: 'Open Sans', sans-serif;
+$mainColor: #333;
+$headingFont: 'Quicksand', sans-serif;
+$headingColor: #333;
+$headingLetterSpacing: -0.08em;
+$headingTextShadow: none;
+$backgroundColor: #f7fbfc;
+$linkColor: #3b759e;
+$linkColorHover: lighten( $linkColor, 20% );
+$selectionBackgroundColor: #134674;
+
+// Fix links so they are not cut off
+.reveal a {
+	line-height: 1.3em;
+}
+
+// Background generator
+@mixin bodyBackground() {
+	@include radial-gradient( rgba(204,234,224,1), rgba(232,241,238,1) );
+}
+
+//Custom header
+.slu-header {
+	position: absolute;
+	float: left;
+	top: 0;
+	left: 0;
+	width: 100%;
+	background: linear-gradient(to right, white, rgba(0,255,0,0));;
+}
+
+
+// Theme template ------------------------------
+@import "../template/theme";
+// ---------------------------------------------
